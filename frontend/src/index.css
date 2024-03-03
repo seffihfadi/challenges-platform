@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @apply text-white bg-[#0c172b]
+}
+.back{
+  
+  /* background-image: url('/bg.jpg'); */
+  @apply w-screen h-screen fixed top-0 left-0 -z-10
+}
+
+.glassmorphism{
+  /* background: rgba(15, 25, 52, 0.5); */
+  background: rgba(9, 9, 9, 0.5);
+
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+}
+.back video {
+  @apply w-screen h-screen
+}
+.backdrop {
+  @apply absolute w-full h-screen left-0 top-0 glassmorphism
+}
+::-webkit-scrollbar {
+  @apply w-1.5 h-1.5
+
+}
+/* ::-webkit-scrollbar-track {
+  @apply 
+} */
+::-webkit-scrollbar-thumb {
+  @apply bg-[#35353584] hover:bg-[#353535] rounded-full
+  
+}
+
+form .group{
+  @apply flex flex-col relative mb-8
+}
+form .group.glass input,
+form .group.glass textarea,
+form .group.glass select{
+  @apply bg-glass border-[1px] border-[#353535]
+}
+form .group input,
+form .group textarea,
+form .group select{
+  @apply px-5 py-3 rounded-lg outline-none border-2 border-gray-500
+}
+form .group input[type='password']{
+  @apply tracking-[.2rem]
+}
+form .group.glass label{
+  @apply bg-transparent text-white 
+}
+form .group label{
+  @apply text-sm capitalize absolute top-3.5 left-4 bg-white px-3 text-gray-500 transition-all rounded-full
+  cursor-text select-none
+}
+form .group input:valid ~ label,
+form .group input:disabled ~ label,
+form .group input:focus ~ label,
+form .group textarea:valid ~ label,
+form .group textarea:focus ~ label,
+form .group select:valid ~ label,
+form .group select:focus ~ label{
+  @apply -top-3.5 left-2 backdrop-blur-sm
+}
+
+
+
+.sign{
+  @apply flex 
+}
+.sign .video {
+  @apply lg:w-[400px] md:w-[350px] overflow-hidden hidden md:block fixed top-0 left-0 flex-shrink-0
+}
+.const{
+  @apply lg:w-[400px] md:w-[350px] flex-shrink-0
+}
+form .group{
+  @apply flex flex-col relative mb-8
+}
+.purple_gradient {
+  @apply bg-gradient-to-r from-purple-700 to-orange-600 bg-clip-text text-transparent;
+}
+.purple_gradient_bg {
+  @apply bg-gradient-to-br from-purple-700 to-orange-600
+}
+.head_text{
+  @apply purple_gradient font-bold my-4 capitalize
+}
+
+.sign button,
+button.gradient {
+  @apply purple_gradient_bg py-2 px-4 rounded-lg text-white font-semibold
+}
+
+button.delete {
+  @apply bg-red-800 py-2.5 px-4 rounded-lg text-white font-semibold
+}
+
+header {
+  @apply flex justify-between items-center py-1.5 px-4 md:px-10 w-screen fixed top-0 left-0 shadow-md z-40 backdrop-blur-md
+}
+.user {
+  @apply flex gap-2 justify-center items-center w-fit  font-medium
+}
+.user .img{
+  @apply flex-shrink-0 rounded-full w-9 h-9 purple_gradient_bg flex justify-center text-lg items-center capitalize
+}
+.user .img.sm {
+  @apply w-6 h-6 text-sm mr-3
+}
+.user .img.plus{
+  @apply text-xs
+}
+p.link a{
+  @apply text-blue-500 
+}
+
+.user .img.logout:hover button{
+  @apply flex
+}
+.user .img.logout:hover span{
+  @apply hidden
+}
+.user .name{
+  @apply flex flex-col justify-center
+}
+
+.user .name span{
+  @apply capitalize
+}
+.user .name p{
+  @apply text-gray-500 text-sm
+}
+
+header .links {
+  @apply rounded-full flex p-1 items-center bg-[#353535] overflow-x-auto max-w-[100%] mr-4
+}
+
+header .links a{
+  @apply rounded-full py-2 px-3 md:px-5 text-sm transition-all whitespace-nowrap flex justify-normal items-center
+}
+
+header .links a:hover {
+  @apply bg-glass
+}
+
+header .links a.active{
+  @apply px-5 md:px-8 bg-white text-black
+}
+.container {
+  @apply mx-auto
+}
+main {
+  @apply mt-14 px-2 md:px-6 py-5
+} 
+
+.field {
+  @apply pl-5 relative min-h-[220px] flex flex-col h-full
+}
+.field.add {
+  @apply justify-center items-center p-0 text-gray-500
+}
+.field:not(.add) .after {
+  @apply w-1 h-full absolute left-0 top-0 rounded-xl content-['']
+}
+
+.field a, button.down, label.down {
+  @apply rounded-full bg-[#353535] tracking-wider transition-all hover:bg-[#353535c8] flex justify-center items-center px-3 py-2
+}
+button.down.danger{
+  @apply bg-red-900
+}
+
+label.down.glass{
+  @apply bg-glass p-3 cursor-pointer
+}
+
+label.down.green{
+  @apply border-2 border-green-400 border-dashed
+}
+
+.field .user{
+  @apply -mr-2 
+}
+
+.field .user .img{
+  @apply backdrop-blur-sm
+}
+
+h1.admin_head_text{
+  @apply uppercase text-white text-lg
+}
+span.difficulty {
+  @apply text-sm
+}
+
+span.difficulty.hard {
+  @apply text-red-500
+}
+span.difficulty.easy {
+  @apply text-cyan-500
+}
+span.difficulty.medium {
+  @apply text-orange-500
+}
+
+input.glass {
+  @apply px-5 py-2 outline-none rounded-full bg-glass
+}
+
+.tag{
+  @apply rounded-full bg-glass w-fit text-sm flex justify-center items-center px-3 py-2 capitalize
+}
+.tag.danger {
+  @apply bg-red-500
+}
+.tag.success{
+  @apply bg-green-500
+}
+.challenge-area .response {
+  @apply my-4
+}
+.challenge-area .response span{
+  @apply text-sm
+}
+span.status.welcome {
+  @apply px-5 py-2 w-fit
+}
+span.status, button.status{
+  @apply rounded-lg px-3 py-1 capitalize
+}
+span.status.accepted{
+  @apply bg-green-500
+}
+span.status.rejected{
+  @apply bg-red-500
+}
+span.status.pending, button.status.pending{
+  @apply bg-orange-500
+}
+
+
+/* loader  */
+.loading{
+  @apply h-full w-full flex justify-center flex-col items-center absolute z-10 left-0 top-0
+}
+.circul_loader {
+  position: relative;
+  width: 100px;
+}
+.circul_loader:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.circular {
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+          animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+  }
+  50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35px;
+  }
+  100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124px;
+  }
+}
+@keyframes dash {
+  0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+  }
+  50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35px;
+  }
+  100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124px;
+  }
+}
+@-webkit-keyframes color {
+  100%, 0% {
+    stroke: #1a73e8;
+  }
+  40% {
+      stroke: #0F9D58;
+  }
+  66% {
+      stroke: #F4B400;
+  }
+  80%, 90% {
+      stroke: #DB4437;
+  }
+}
+@keyframes color {
+  100%, 0% {
+    stroke: #1a73e8;
+  }
+  40% {
+      stroke: #0F9D58;
+  }
+  66% {
+      stroke: #F4B400;
+  }
+  80%, 90% {
+      stroke: #DB4437;
+  }
+}
+
+
+.container > div:not(.loading), main .ldr {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Define keyframes for fade out */
+@keyframes fadeOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.alert{
+  animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 4.5s forwards;
+  @apply fixed font-semibold w-full bottom-0 left-0 md:bottom-auto md:left-auto md:right-6
+  md:max-w-xs md:top-20 bg-glass px-5 py-3 rounded-lg md:border-[1px] border-[#353535] flex 
+  justify-center items-center gap-3 md:w-fit z-40 shadow-lg backdrop-blur-md text-sm
+}
+.alert i {
+  @apply text-[20px]
+}
+.alert.error *{
+  @apply text-red-600
+}
+
+.alert.warning *{
+  @apply text-orange-600
+}
+.alert.success *{
+  @apply text-green-600
+}
+
+
+button:disabled {
+  @apply animate-pulse
+}
+
+
+.chdsc {
+  @apply my-10
+}
+
+.chdsc.side{
+  @apply my-0 px-10 border-l-[1px] border-[#353535]
+}
+
+.chdsc .left{
+  @apply col-span-12 md:col-span-6 lg:col-span-8 md:border-r-[1px] border-[#353535]
+}
+.chdsc .right{
+  @apply col-span-12 md:col-span-6 lg:col-span-4 flex justify-center my-10 md:my-0 items-center flex-col gap-4
+}
+
+.chdsc.side .left{
+  @apply col-span-12 md:border-none 
+}
+.chdsc.side .right{
+  @apply col-span-12 md:my-10 
+}
